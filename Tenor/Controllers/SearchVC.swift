@@ -42,30 +42,44 @@ class SearchVC: UIViewController {
         dataRequest?.cancel()
 
         dataRequest = Alamofire.request(url).responseData { [weak self] response in
-                
-            switch response.result {
-            case .success:
-                
-                guard let data = response.data else {
-                    return
-                }
-                
-                do {
-                    let decoder = JSONDecoder()
-                    let response = try decoder.decode(Response<[GIF]>.self, from: data)
-                    self?.resultsArray = response.results ?? []
-                } catch {
-                    print(error)
-                }
-                
-                DispatchQueue.main.async {
+            
+            DispatchQueue.main.async {
+                switch response.result {
+                case .success:
+                    guard let data = response.data else {
+                        self?.showErrorAlert(with: "No data received.")
+                        return
+                    }
+                    
+                    do {
+                        let decoder = JSONDecoder()
+                        let response = try decoder.decode(Response<[GIF]>.self, from: data)
+                        self?.resultsArray = response.results ?? []
+                    } catch {
+                        self?.showErrorAlert(with: error.localizedDescription)
+                    }
+                    
                     self?.resultCollectionView.reloadData()
+                    
+                case .failure(let error):
+                    // Do not show error alert if, request was cancelled.
+                    guard (error as NSError).code != -999 else { return }
+                    self?.showErrorAlert(with: error.localizedDescription)
                 }
-                
-            case .failure(let error):
-                print(error)
             }
         }
+    }
+    
+    private func showErrorAlert(with message: String) {
+        
+        let alertController = UIAlertController(title: "Error",
+                                                message: message,
+                                                preferredStyle: .alert)
+        
+        let okayAction = UIAlertAction(title: "Okay", style: .default)
+        alertController.addAction(okayAction)
+        
+        present(alertController, animated: true, completion: nil)
     }
 }
 
@@ -108,5 +122,8 @@ extension SearchVC: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+        guard let url = resultsArray[indexPath.row].media?.first?.mp4?.url else { return }
+
+        let _ = VideoPlayer.playVideo(with: url)
     }
 }

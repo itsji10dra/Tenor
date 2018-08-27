@@ -22,6 +22,9 @@
 		103A38E4213474C600343B4C /* EndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103A38E3213474C600343B4C /* EndPoints.swift */; };
 		103A38E62134754100343B4C /* URLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103A38E52134754100343B4C /* URLManager.swift */; };
 		103A38E82134765200343B4C /* Alias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103A38E72134765200343B4C /* Alias.swift */; };
+		103A38ED2134873E00343B4C /* VideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 103A38EC2134873E00343B4C /* VideoPlayer.m */; };
+		103A38F1213487B000343B4C /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 103A38EF213487B000343B4C /* AVKit.framework */; };
+		103A38F2213487B000343B4C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 103A38F0213487B000343B4C /* AVFoundation.framework */; };
 		8717D3D424A3CC981B87255C /* Pods_TenorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CD21D8471592E2C5968FEBF /* Pods_TenorTests.framework */; };
 		AD282BAAAC0CE809F1BC8BD3 /* Pods_Tenor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BA36817410F5CC58B03C731 /* Pods_Tenor.framework */; };
 /* End PBXBuildFile section */
@@ -56,6 +59,11 @@
 		103A38E3213474C600343B4C /* EndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoints.swift; sourceTree = "<group>"; };
 		103A38E52134754100343B4C /* URLManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLManager.swift; sourceTree = "<group>"; };
 		103A38E72134765200343B4C /* Alias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alias.swift; sourceTree = "<group>"; };
+		103A38EA2134873D00343B4C /* Tenor-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tenor-Bridging-Header.h"; sourceTree = "<group>"; };
+		103A38EB2134873E00343B4C /* VideoPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoPlayer.h; sourceTree = "<group>"; };
+		103A38EC2134873E00343B4C /* VideoPlayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoPlayer.m; sourceTree = "<group>"; };
+		103A38EF213487B000343B4C /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		103A38F0213487B000343B4C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		178EC28A69CFC738B5DCED14 /* Pods-TenorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TenorTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TenorTests/Pods-TenorTests.debug.xcconfig"; sourceTree = "<group>"; };
 		33C070874EB971D05329F888 /* Pods-TenorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TenorTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TenorTests/Pods-TenorTests.release.xcconfig"; sourceTree = "<group>"; };
 		7BA36817410F5CC58B03C731 /* Pods_Tenor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tenor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,6 +77,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				103A38F1213487B000343B4C /* AVKit.framework in Frameworks */,
+				103A38F2213487B000343B4C /* AVFoundation.framework in Frameworks */,
 				AD282BAAAC0CE809F1BC8BD3 /* Pods_Tenor.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -111,6 +121,7 @@
 				103A38B7213460EB00343B4C /* Main.storyboard */,
 				103A38E02134721100343B4C /* Configuration.swift */,
 				103A38E72134765200343B4C /* Alias.swift */,
+				103A38EE2134875800343B4C /* VideoPlayer */,
 				103A38E2213474B800343B4C /* Network */,
 				103A38D9213466C700343B4C /* Models */,
 				103A38D6213466B300343B4C /* Controllers */,
@@ -169,10 +180,20 @@
 		103A38E921347D4800343B4C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				103A38EA2134873D00343B4C /* Tenor-Bridging-Header.h */,
 				103A38BA213460ED00343B4C /* Assets.xcassets */,
 				103A38BC213460ED00343B4C /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		103A38EE2134875800343B4C /* VideoPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				103A38EB2134873E00343B4C /* VideoPlayer.h */,
+				103A38EC2134873E00343B4C /* VideoPlayer.m */,
+			);
+			path = VideoPlayer;
 			sourceTree = "<group>";
 		};
 		DD270BBEA87ACDADBB5D75A6 /* Pods */ = {
@@ -189,6 +210,8 @@
 		F459CD23D75D30300A8B02C8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				103A38F0213487B000343B4C /* AVFoundation.framework */,
+				103A38EF213487B000343B4C /* AVKit.framework */,
 				7BA36817410F5CC58B03C731 /* Pods_Tenor.framework */,
 				8CD21D8471592E2C5968FEBF /* Pods_TenorTests.framework */,
 			);
@@ -248,6 +271,7 @@
 				TargetAttributes = {
 					103A38AF213460EB00343B4C = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
 					};
 					103A38C3213460ED00343B4C = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -364,6 +388,7 @@
 			files = (
 				103A38D8213466C200343B4C /* Response.swift in Sources */,
 				103A38E4213474C600343B4C /* EndPoints.swift in Sources */,
+				103A38ED2134873E00343B4C /* VideoPlayer.m in Sources */,
 				103A38D42134643300343B4C /* PreviewCell.swift in Sources */,
 				103A38E62134754100343B4C /* URLManager.swift in Sources */,
 				103A38DD21346A5600343B4C /* Media.swift in Sources */,
@@ -533,12 +558,18 @@
 			baseConfigurationReference = E5A13FA28AF29149676D4425 /* Pods-Tenor.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Tenor/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.itsji10dra.Tenor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Tenor/Resources/Tenor-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -549,12 +580,17 @@
 			baseConfigurationReference = E2F6392B4A89950D616585D3 /* Pods-Tenor.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Tenor/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.itsji10dra.Tenor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Tenor/Resources/Tenor-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -568,7 +604,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = TenorTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.itsji10dra.TenorTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -585,7 +625,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = TenorTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.itsji10dra.TenorTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
