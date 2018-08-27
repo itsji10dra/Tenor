@@ -30,6 +30,7 @@ class SearchVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+
     }
     
     // MARK: - Methods
@@ -97,8 +98,6 @@ extension SearchVC: UICollectionViewDataSource {
             cell?.thumbImageView.af_setImage(withURL: url,
                                              placeholderImage: #imageLiteral(resourceName: "placeholder"),
                                              imageTransition: .crossDissolve(0.1))
-        } else {
-            cell?.thumbImageView.image = nil
         }
         
         return cell ?? UICollectionViewCell()

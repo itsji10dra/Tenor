@@ -11,5 +11,10 @@ import UIKit
 class PreviewCell: UICollectionViewCell {
     
     @IBOutlet weak var thumbImageView: UIImageView!
-
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        thumbImageView.image = nil
+    }
 }
