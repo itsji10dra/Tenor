@@ -40,12 +40,16 @@ class SearchVC: UIViewController {
         guard let url = URLManager.getURL(for: .search, appending: ["q": keyword]) else { return }
         
         dataRequest?.cancel()
-
+        
+        ActivityIndicator.startAnimating()
+        
         dataRequest = Alamofire.request(url).responseData { [weak self] response in
             
             DispatchQueue.main.async {
                 switch response.result {
                 case .success:
+                    ActivityIndicator.stopAnimating()
+                    
                     guard let data = response.data else {
                         self?.showErrorAlert(with: "No data received.")
                         return
@@ -64,6 +68,7 @@ class SearchVC: UIViewController {
                 case .failure(let error):
                     // Do not show error alert if, request was cancelled.
                     guard (error as NSError).code != -999 else { return }
+                    ActivityIndicator.stopAnimating()
                     self?.showErrorAlert(with: error.localizedDescription)
                 }
             }

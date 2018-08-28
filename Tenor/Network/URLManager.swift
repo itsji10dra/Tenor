@@ -12,7 +12,7 @@ struct URLManager {
     
     // MARK: - Public
     
-    static func getURL(for resource: EndPoint, appending parameters: Parameters? = nil) -> URL? {
+    static public func getURL(for resource: EndPoint, appending parameters: Parameters? = nil) -> URL? {
         
         let endPoint = resource.rawValue
         

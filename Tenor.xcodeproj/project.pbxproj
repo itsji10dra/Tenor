@@ -25,6 +25,7 @@
 		103A38ED2134873E00343B4C /* VideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 103A38EC2134873E00343B4C /* VideoPlayer.m */; };
 		103A38F1213487B000343B4C /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 103A38EF213487B000343B4C /* AVKit.framework */; };
 		103A38F2213487B000343B4C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 103A38F0213487B000343B4C /* AVFoundation.framework */; };
+		103A38F621357FCB00343B4C /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103A38F521357FCB00343B4C /* ActivityIndicator.swift */; };
 		8717D3D424A3CC981B87255C /* Pods_TenorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CD21D8471592E2C5968FEBF /* Pods_TenorTests.framework */; };
 		AD282BAAAC0CE809F1BC8BD3 /* Pods_Tenor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BA36817410F5CC58B03C731 /* Pods_Tenor.framework */; };
 /* End PBXBuildFile section */
@@ -64,6 +65,7 @@
 		103A38EC2134873E00343B4C /* VideoPlayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoPlayer.m; sourceTree = "<group>"; };
 		103A38EF213487B000343B4C /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		103A38F0213487B000343B4C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		103A38F521357FCB00343B4C /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		178EC28A69CFC738B5DCED14 /* Pods-TenorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TenorTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TenorTests/Pods-TenorTests.debug.xcconfig"; sourceTree = "<group>"; };
 		33C070874EB971D05329F888 /* Pods-TenorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TenorTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TenorTests/Pods-TenorTests.release.xcconfig"; sourceTree = "<group>"; };
 		7BA36817410F5CC58B03C731 /* Pods_Tenor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tenor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,6 +123,7 @@
 				103A38B7213460EB00343B4C /* Main.storyboard */,
 				103A38E02134721100343B4C /* Configuration.swift */,
 				103A38E72134765200343B4C /* Alias.swift */,
+				103A38F521357FCB00343B4C /* ActivityIndicator.swift */,
 				103A38EE2134875800343B4C /* VideoPlayer */,
 				103A38E2213474B800343B4C /* Network */,
 				103A38D9213466C700343B4C /* Models */,
@@ -390,6 +393,7 @@
 				103A38E4213474C600343B4C /* EndPoints.swift in Sources */,
 				103A38ED2134873E00343B4C /* VideoPlayer.m in Sources */,
 				103A38D42134643300343B4C /* PreviewCell.swift in Sources */,
+				103A38F621357FCB00343B4C /* ActivityIndicator.swift in Sources */,
 				103A38E62134754100343B4C /* URLManager.swift in Sources */,
 				103A38DD21346A5600343B4C /* Media.swift in Sources */,
 				103A38B6213460EB00343B4C /* SearchVC.swift in Sources */,
