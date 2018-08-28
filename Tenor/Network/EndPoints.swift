@@ -10,5 +10,5 @@ import Foundation
 
 enum EndPoint: String {
     
-    case search   = "/v1/search/"
+    case search   = "/v1/search"
 }
