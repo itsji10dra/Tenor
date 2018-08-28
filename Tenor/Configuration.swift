@@ -16,6 +16,8 @@ struct Configuration {
     
     static let pageLimit    = 8
 
+    static var anonymoudId: String? = nil
+    
     static func checkConfiguration() {
         
         if url.isEmpty || key.isEmpty {

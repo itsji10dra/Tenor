@@ -20,20 +20,22 @@ class SearchVC: UIViewController {
     
     // MARK: - Data
     
-    private lazy var resultsArray: [GIF] = []
+    internal lazy var resultsArray: [GIF] = []
     
-    private let cellIdentifier = "PreviewCell"
+    internal let cellIdentifier = "PreviewCell"
     
-    private let cellHeight: CGFloat = 250
+    internal let cellHeight: CGFloat = 250
     
+    private let anonIdViewModel = AnonIdViewModel()
+
     private let searchViewModel = SearchViewModel()
     
     // MARK: - View
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        fetchResult()
+        
+        fetchAnonymousId()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -50,6 +52,22 @@ class SearchVC: UIViewController {
     
     // MARK: - Methods
 
+    private func fetchAnonymousId() {
+        
+        ActivityIndicator.startAnimating()
+
+        anonIdViewModel.getAnonymousId { [weak self] success in
+            
+            ActivityIndicator.stopAnimating()
+            
+            if success {
+                self?.fetchResult()
+            } else {
+                self?.showRetryAlert()
+            }
+        }
+    }
+    
     private func fetchResult(for keyword: String = "") {
     
         ActivityIndicator.startAnimating()
@@ -77,6 +95,25 @@ class SearchVC: UIViewController {
         resultCollectionView.collectionViewLayout.invalidateLayout()
     }
     
+    private func showRetryAlert() {
+        
+        let alertController = UIAlertController(title: "Error",
+                                                message: "Unable to fetch anonymous id.",
+                                                preferredStyle: .alert)
+        
+        let retryAction = UIAlertAction(title: "Retry", style: .default) { [weak self] _ in
+            self?.fetchAnonymousId()
+        }
+        alertController.addAction(retryAction)
+        
+        let withoutAction = UIAlertAction(title: "Search without anonymous id.", style: .default) { [weak self] _ in
+            self?.fetchResult()
+        }
+        alertController.addAction(withoutAction)
+
+        present(alertController, animated: true, completion: nil)
+    }
+
     private func showErrorAlert(with message: String) {
         
         let alertController = UIAlertController(title: "Error",
@@ -95,51 +132,5 @@ extension SearchVC: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
         fetchResult(for: searchText)
-    }
-}
-
-extension SearchVC: UICollectionViewDataSource {
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return resultsArray.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as? PreviewCell
-        
-        if let url = resultsArray[indexPath.row].media?.first?.mp4?.preview {
-        
-            cell?.thumbImageView.af_setImage(withURL: url,
-                                             placeholderImage: #imageLiteral(resourceName: "placeholder"),
-                                             imageTransition: .crossDissolve(0.1))
-        }
-        
-        return cell ?? UICollectionViewCell()
-    }
-}
-
-extension SearchVC: UICollectionViewDelegate {
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        guard let url = resultsArray[indexPath.row].media?.first?.mp4?.url else { return }
-
-        let _ = VideoPlayer.playVideo(with: url)
-    }
-}
-
-extension SearchVC: UICollectionViewDelegateFlowLayout {
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        switch UIDevice.current.userInterfaceIdiom {
-        case .carPlay, .tv, .unspecified:
-            fallthrough
-        case .phone:
-            return CGSize(width: collectionView.frame.width, height: cellHeight)
-        case .pad:
-            return CGSize(width: collectionView.frame.width/2, height: cellHeight)
-        }
     }
 }

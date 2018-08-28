@@ -23,18 +23,14 @@ class SearchViewModel {
 
     public func search(using query: String, completion: @escaping SearchResult) {
         
-        guard let url = URLManager.getURL(for: .search, appending: ["q": query]) else { return }
+        guard let url = URLManager.getURL(for: .search, appending: ["q": query], withLimit: true) else { return }
         
         dataRequest?.cancel()
-        
-        ActivityIndicator.startAnimating()
         
         dataRequest = Alamofire.request(url).responseData { response in
             
             switch response.result {
-            case .success:
-                ActivityIndicator.stopAnimating()
-                
+            case .success:                
                 guard let data = response.data else {
                     let error = NSError(domain: "No data received.", code: -1, userInfo: nil)
                     completion(nil, error)
