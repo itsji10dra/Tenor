@@ -32,13 +32,13 @@ class SearchVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-
+        fetchResult()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(SearchVC.orientationDidChange), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(SearchVC.orientationDidChange), name: Notification.Name.UIDeviceOrientationDidChange, object: nil)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -49,7 +49,7 @@ class SearchVC: UIViewController {
     
     // MARK: - Methods
 
-    private func fetchResult(for keyword: String) {
+    private func fetchResult(for keyword: String = "") {
         
         guard let url = URLManager.getURL(for: .search, appending: ["q": keyword]) else { return }
         
@@ -110,12 +110,6 @@ class SearchVC: UIViewController {
 extension SearchVC: UISearchBarDelegate {
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        
-        if searchText.isEmpty {
-            resultsArray.removeAll(keepingCapacity: true)
-            resultCollectionView.reloadData()
-            return
-        }
         
         fetchResult(for: searchText)
     }
