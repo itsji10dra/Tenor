@@ -123,8 +123,8 @@
 				103A38B7213460EB00343B4C /* Main.storyboard */,
 				103A38E02134721100343B4C /* Configuration.swift */,
 				103A38E72134765200343B4C /* Alias.swift */,
-				103A38F521357FCB00343B4C /* ActivityIndicator.swift */,
 				103A38EE2134875800343B4C /* VideoPlayer */,
+				103A38F72135B82A00343B4C /* UI */,
 				103A38E2213474B800343B4C /* Network */,
 				103A38D9213466C700343B4C /* Models */,
 				103A38D6213466B300343B4C /* Controllers */,
@@ -197,6 +197,14 @@
 				103A38EC2134873E00343B4C /* VideoPlayer.m */,
 			);
 			path = VideoPlayer;
+			sourceTree = "<group>";
+		};
+		103A38F72135B82A00343B4C /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				103A38F521357FCB00343B4C /* ActivityIndicator.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 		DD270BBEA87ACDADBB5D75A6 /* Pods */ = {
@@ -564,7 +572,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Tenor/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.itsji10dra.Tenor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Tenor/Resources/Tenor-Bridging-Header.h";
@@ -583,7 +594,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Tenor/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.itsji10dra.Tenor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Tenor/Resources/Tenor-Bridging-Header.h";
@@ -600,7 +614,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = TenorTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.itsji10dra.TenorTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -617,7 +635,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = TenorTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.itsji10dra.TenorTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
