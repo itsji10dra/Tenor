@@ -1,0 +1,80 @@
+{
+  "nanowebm": {
+    "url": "https://media.tenor.com/videos/9547e1c42b48207402b1b478fc1bd200/webm", 
+    "dims": [
+      128, 
+      128
+    ], 
+    "preview": "https://media.tenor.com/images/e58f5f986f7731431058e41934c9ca20/tenor.png", 
+    "size": 11894
+  }, 
+  "tinygif": {
+    "url": "https://media.tenor.com/images/1fcc78e0b109a25a791a3e3f32646a93/tenor.gif", 
+    "dims": [
+      220, 
+      220
+    ], 
+    "preview": "https://media.tenor.com/images/23d458e676356011f9a98ece90d84b47/tenor.gif", 
+    "size": 25155
+  }, 
+  "tinymp4": {
+    "dims": [
+      128, 
+      128
+    ], 
+    "duration": 0.7, 
+    "size": 12338
+  }, 
+  "webm": {
+    "url": "https://media.tenor.com/videos/71b98f8d1fb7c02281281db6554934f7/webm", 
+    "dims": [
+      128, 
+      128
+    ], 
+    "preview": "https://media.tenor.com/images/99725b3905ee7f7332a79c85cb580d4e/tenor.png", 
+    "size": 10832
+  }, 
+  "gif": {
+    "url": "https://media.tenor.com/images/bec35217279330707cde141c29425dc7/tenor.gif", 
+    "dims": [
+      128, 
+      128
+    ], 
+    "preview": "https://media.tenor.com/images/99725b3905ee7f7332a79c85cb580d4e/tenor.png", 
+    "size": 111231
+  }, 
+  "mp4": {
+    "url": "https://media.tenor.com/videos/6182d03aacf9407b38af0081aa95eec5/mp4", 
+    "dims": [
+      128, 
+      128
+    ], 
+    "duration": 0.7, 
+    "preview": "https://media.tenor.com/images/99725b3905ee7f7332a79c85cb580d4e/tenor.png", 
+    "size": 6294
+  }, 
+  "loopedmp4": {
+    "url": "https://media.tenor.com/videos/6c0263257c31d3fa659fa67aaa9198a7/mp4", 
+    "dims": [
+      128, 
+      128
+    ], 
+    "duration": 2.1, 
+    "preview": "https://media.tenor.com/images/99725b3905ee7f7332a79c85cb580d4e/tenor.png", 
+    "size": 17335
+  }, 
+  "mediumgif": {
+    "url": "https://media.tenor.com/images/69b56c923fc10c98349be05b3a6f5bbe/tenor.gif", 
+    "preview": "https://media.tenor.com/images/5d6e6471eb5ebfffbc8bb832a1bd9517/tenor.gif", 
+    "size": 34356
+  }, 
+  "nanogif": {
+    "url": "https://media.tenor.com/images/868512f4a3c35bca25a1d4a40008197e/tenor.gif", 
+    "dims": [
+      90, 
+      90
+    ], 
+    "preview": "https://media.tenor.com/images/93a1728f72e89088a4f36f8d6da3c342/tenor.gif", 
+    "size": 6501
+  }
+}

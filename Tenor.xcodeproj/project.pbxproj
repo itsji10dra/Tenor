@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10015CED2135D7B700160F63 /* Media.json in Resources */ = {isa = PBXBuildFile; fileRef = 10015CEC2135D61600160F63 /* Media.json */; };
+		10015CF02135D7F200160F63 /* MediaCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10015CEF2135D7F200160F63 /* MediaCollectionTests.swift */; };
+		10015CF72135DB4F00160F63 /* GIFTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10015CF62135DB4F00160F63 /* GIFTests.swift */; };
+		10015CFA2135DE7300160F63 /* ResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10015CF92135DE7300160F63 /* ResponseTests.swift */; };
+		10015CFE2135DFCE00160F63 /* GIF.json in Resources */ = {isa = PBXBuildFile; fileRef = 10015CFD2135DFCE00160F63 /* GIF.json */; };
+		10015D002135DFEA00160F63 /* Response.json in Resources */ = {isa = PBXBuildFile; fileRef = 10015CFF2135DFEA00160F63 /* Response.json */; };
+		10015D022135E05200160F63 /* MediaCollection.json in Resources */ = {isa = PBXBuildFile; fileRef = 10015D012135E05200160F63 /* MediaCollection.json */; };
 		103A38B4213460EB00343B4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103A38B3213460EB00343B4C /* AppDelegate.swift */; };
 		103A38B6213460EB00343B4C /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103A38B5213460EB00343B4C /* SearchVC.swift */; };
 		103A38B9213460EB00343B4C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 103A38B7213460EB00343B4C /* Main.storyboard */; };
@@ -26,6 +33,7 @@
 		103A38F1213487B000343B4C /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 103A38EF213487B000343B4C /* AVKit.framework */; };
 		103A38F2213487B000343B4C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 103A38F0213487B000343B4C /* AVFoundation.framework */; };
 		103A38F621357FCB00343B4C /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103A38F521357FCB00343B4C /* ActivityIndicator.swift */; };
+		103A38F92135B92100343B4C /* MediaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103A38F82135B92100343B4C /* MediaTests.swift */; };
 		8717D3D424A3CC981B87255C /* Pods_TenorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CD21D8471592E2C5968FEBF /* Pods_TenorTests.framework */; };
 		AD282BAAAC0CE809F1BC8BD3 /* Pods_Tenor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BA36817410F5CC58B03C731 /* Pods_Tenor.framework */; };
 /* End PBXBuildFile section */
@@ -41,6 +49,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		10015CEC2135D61600160F63 /* Media.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Media.json; sourceTree = "<group>"; };
+		10015CEF2135D7F200160F63 /* MediaCollectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaCollectionTests.swift; sourceTree = "<group>"; };
+		10015CF62135DB4F00160F63 /* GIFTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIFTests.swift; sourceTree = "<group>"; };
+		10015CF92135DE7300160F63 /* ResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseTests.swift; sourceTree = "<group>"; };
+		10015CFD2135DFCE00160F63 /* GIF.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GIF.json; sourceTree = "<group>"; };
+		10015CFF2135DFEA00160F63 /* Response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Response.json; sourceTree = "<group>"; };
+		10015D012135E05200160F63 /* MediaCollection.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MediaCollection.json; sourceTree = "<group>"; };
 		103A38B0213460EB00343B4C /* Tenor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tenor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		103A38B3213460EB00343B4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		103A38B5213460EB00343B4C /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
@@ -66,6 +81,7 @@
 		103A38EF213487B000343B4C /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		103A38F0213487B000343B4C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		103A38F521357FCB00343B4C /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		103A38F82135B92100343B4C /* MediaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaTests.swift; sourceTree = "<group>"; };
 		178EC28A69CFC738B5DCED14 /* Pods-TenorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TenorTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TenorTests/Pods-TenorTests.debug.xcconfig"; sourceTree = "<group>"; };
 		33C070874EB971D05329F888 /* Pods-TenorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TenorTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TenorTests/Pods-TenorTests.release.xcconfig"; sourceTree = "<group>"; };
 		7BA36817410F5CC58B03C731 /* Pods_Tenor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tenor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,6 +112,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		10015CEB2135D61000160F63 /* Media */ = {
+			isa = PBXGroup;
+			children = (
+				103A38F82135B92100343B4C /* MediaTests.swift */,
+				10015CEC2135D61600160F63 /* Media.json */,
+			);
+			path = Media;
+			sourceTree = "<group>";
+		};
+		10015CEE2135D7DC00160F63 /* MediaCollection */ = {
+			isa = PBXGroup;
+			children = (
+				10015CEF2135D7F200160F63 /* MediaCollectionTests.swift */,
+				10015D012135E05200160F63 /* MediaCollection.json */,
+			);
+			path = MediaCollection;
+			sourceTree = "<group>";
+		};
+		10015CF32135DB3200160F63 /* GIF */ = {
+			isa = PBXGroup;
+			children = (
+				10015CF62135DB4F00160F63 /* GIFTests.swift */,
+				10015CFD2135DFCE00160F63 /* GIF.json */,
+			);
+			path = GIF;
+			sourceTree = "<group>";
+		};
+		10015CF82135DE2E00160F63 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				10015CF92135DE7300160F63 /* ResponseTests.swift */,
+				10015CFF2135DFEA00160F63 /* Response.json */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		10015D032135E0BB00160F63 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				10015CF82135DE2E00160F63 /* Response */,
+				10015CF32135DB3200160F63 /* GIF */,
+				10015CEE2135D7DC00160F63 /* MediaCollection */,
+				10015CEB2135D61000160F63 /* Media */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		103A38A7213460EB00343B4C = {
 			isa = PBXGroup;
 			children = (
@@ -139,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				103A38C8213460ED00343B4C /* TenorTests.swift */,
+				10015D032135E0BB00160F63 /* Models */,
 				103A38CA213460ED00343B4C /* Info.plist */,
 			);
 			path = TenorTests;
@@ -324,6 +388,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10015D022135E05200160F63 /* MediaCollection.json in Resources */,
+				10015D002135DFEA00160F63 /* Response.json in Resources */,
+				10015CFE2135DFCE00160F63 /* GIF.json in Resources */,
+				10015CED2135D7B700160F63 /* Media.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,7 +483,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10015CFA2135DE7300160F63 /* ResponseTests.swift in Sources */,
+				103A38F92135B92100343B4C /* MediaTests.swift in Sources */,
 				103A38C9213460ED00343B4C /* TenorTests.swift in Sources */,
+				10015CF72135DB4F00160F63 /* GIFTests.swift in Sources */,
+				10015CF02135D7F200160F63 /* MediaCollectionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
