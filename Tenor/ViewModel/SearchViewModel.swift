@@ -1,0 +1,57 @@
+//
+//  SearchViewModel.swift
+//  Tenor
+//
+//  Created by Jitendra on 29/08/18.
+//  Copyright © 2018 Jitendra Gandhi. All rights reserved.
+//
+
+import Foundation
+import Alamofire
+
+class SearchViewModel {
+    
+    // MARK: - Alias
+    
+    typealias SearchResult = ((_ data: [GIF]?, _ error: Error?) -> Void)
+
+    // MARK: - IBOutlets
+
+    private var dataRequest: DataRequest?
+    
+    // MARK: - Public Methods
+
+    public func search(using query: String, completion: @escaping SearchResult) {
+        
+        guard let url = URLManager.getURL(for: .search, appending: ["q": query]) else { return }
+        
+        dataRequest?.cancel()
+        
+        ActivityIndicator.startAnimating()
+        
+        dataRequest = Alamofire.request(url).responseData { response in
+            
+            switch response.result {
+            case .success:
+                ActivityIndicator.stopAnimating()
+                
+                guard let data = response.data else {
+                    let error = NSError(domain: "No data received.", code: -1, userInfo: nil)
+                    completion(nil, error)
+                    return
+                }
+                
+                do {
+                    let decoder = JSONDecoder()
+                    let response = try decoder.decode(Response<[GIF]>.self, from: data)
+                    completion(response.results ?? [], nil)
+                } catch {
+                    completion(nil, error)
+                }
+                
+            case .failure(let error):
+                completion(nil, error)
+            }
+        }
+    }
+}

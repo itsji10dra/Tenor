@@ -15,6 +15,7 @@ class SearchVC: UIViewController {
     // MARK: - IBOutlets
     
     @IBOutlet weak var searchBar: UISearchBar!
+    
     @IBOutlet weak var resultCollectionView: UICollectionView!
     
     // MARK: - Data
@@ -25,7 +26,7 @@ class SearchVC: UIViewController {
     
     private let cellHeight: CGFloat = 250
     
-    private var dataRequest: DataRequest?
+    private let searchViewModel = SearchViewModel()
     
     // MARK: - View
 
@@ -50,41 +51,23 @@ class SearchVC: UIViewController {
     // MARK: - Methods
 
     private func fetchResult(for keyword: String = "") {
-        
-        guard let url = URLManager.getURL(for: .search, appending: ["q": keyword]) else { return }
-        
-        dataRequest?.cancel()
-        
+    
         ActivityIndicator.startAnimating()
         
-        dataRequest = Alamofire.request(url).responseData { [weak self] response in
+        searchViewModel.search(using: keyword) { [weak self] (data, error) in
             
             DispatchQueue.main.async {
-                switch response.result {
-                case .success:
-                    ActivityIndicator.stopAnimating()
-                    
-                    guard let data = response.data else {
-                        self?.showErrorAlert(with: "No data received.")
-                        return
-                    }
-                    
-                    do {
-                        let decoder = JSONDecoder()
-                        let response = try decoder.decode(Response<[GIF]>.self, from: data)
-                        self?.resultsArray = response.results ?? []
-                    } catch {
-                        self?.showErrorAlert(with: error.localizedDescription)
-                    }
-                    
-                    self?.resultCollectionView.reloadData()
-                    
-                case .failure(let error):
+                if let error = error {
                     // Do not show error alert if, request was cancelled.
                     guard (error as NSError).code != -999 else { return }
-                    ActivityIndicator.stopAnimating()
                     self?.showErrorAlert(with: error.localizedDescription)
                 }
+                else if let data = data {
+                    self?.resultsArray = data
+                    self?.resultCollectionView.reloadData()
+                }
+                
+                ActivityIndicator.stopAnimating()
             }
         }
     }
@@ -160,4 +143,3 @@ extension SearchVC: UICollectionViewDelegateFlowLayout {
         }
     }
 }
-
