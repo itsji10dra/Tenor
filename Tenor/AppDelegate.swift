@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import IQKeyboardManagerSwift
 import AlamofireNetworkActivityIndicator
 
 @UIApplicationMain
@@ -20,8 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         Configuration.checkConfiguration()
         
-        IQKeyboardManager.shared.enable = true
-
         NetworkActivityIndicatorManager.shared.isEnabled = true
 
         return true

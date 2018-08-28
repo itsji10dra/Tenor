@@ -4,27 +4,23 @@ PODS:
     - Alamofire (~> 4.5)
   - AlamofireNetworkActivityIndicator (2.2.1):
     - Alamofire (~> 4.7)
-  - IQKeyboardManagerSwift (6.1.1)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
   - AlamofireImage (~> 3.3)
   - AlamofireNetworkActivityIndicator (~> 2.2)
-  - IQKeyboardManagerSwift
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - AlamofireImage
     - AlamofireNetworkActivityIndicator
-    - IQKeyboardManagerSwift
 
 SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   AlamofireImage: 3b35b586853abaf94ca1250f4e94cff3c21a4c0d
   AlamofireNetworkActivityIndicator: aeac50e6ecb78ec71a5f1f29098bcf4ec2962910
-  IQKeyboardManagerSwift: 977affaeb4d6e971975c7790a6850f31d38f1207
 
-PODFILE CHECKSUM: d0a88b337f996d5c7b9cd4ef64c85b745254e3e8
+PODFILE CHECKSUM: 9fa81c1a4571f1d43187ae63d6b24655ce51cca6
 
 COCOAPODS: 1.5.3

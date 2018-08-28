@@ -7,8 +7,6 @@ target 'Tenor' do
   pod 'Alamofire', '~> 4.7'
   pod 'AlamofireImage', '~> 3.3'
   pod 'AlamofireNetworkActivityIndicator', '~> 2.2'
-
-  pod 'IQKeyboardManagerSwift'
   
   target 'TenorTests' do
     inherit! :search_paths
