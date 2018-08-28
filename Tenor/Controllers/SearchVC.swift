@@ -23,6 +23,8 @@ class SearchVC: UIViewController {
     
     private let cellIdentifier = "PreviewCell"
     
+    private let cellHeight: CGFloat = 250
+    
     private var dataRequest: DataRequest?
     
     // MARK: - View
@@ -31,6 +33,18 @@ class SearchVC: UIViewController {
         super.viewDidLoad()
 
 
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(SearchVC.orientationDidChange), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        NotificationCenter.default.removeObserver(self)
     }
     
     // MARK: - Methods
@@ -73,6 +87,11 @@ class SearchVC: UIViewController {
                 }
             }
         }
+    }
+    
+    @objc
+    func orientationDidChange() {
+        resultCollectionView.collectionViewLayout.invalidateLayout()
     }
     
     private func showErrorAlert(with message: String) {
@@ -132,3 +151,19 @@ extension SearchVC: UICollectionViewDelegate {
         let _ = VideoPlayer.playVideo(with: url)
     }
 }
+
+extension SearchVC: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        switch UIDevice.current.userInterfaceIdiom {
+        case .carPlay, .tv, .unspecified:
+            fallthrough
+        case .phone:
+            return CGSize(width: collectionView.frame.width, height: cellHeight)
+        case .pad:
+            return CGSize(width: collectionView.frame.width/2, height: cellHeight)
+        }
+    }
+}
+
