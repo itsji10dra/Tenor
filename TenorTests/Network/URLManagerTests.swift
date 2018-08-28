@@ -33,7 +33,7 @@ class URLManagerTests: XCTestCase {
         XCTAssertEqual(url.scheme, actualURL?.scheme)
         XCTAssertEqual(url.path, EndPoint.search.rawValue)
         
-        let actualQuery = "key=\(Configuration.key)&limit=\(Configuration.pageLimit)"
+        let actualQuery = "key=\(Configuration.key)"
         XCTAssertEqual(url.query, actualQuery)
     }
     
@@ -46,6 +46,23 @@ class URLManagerTests: XCTestCase {
 
         let actualURL = URL(string: Configuration.url)
 
+        XCTAssertEqual(url.host, actualURL?.host)
+        XCTAssertEqual(url.scheme, actualURL?.scheme)
+        XCTAssertEqual(url.path, EndPoint.search.rawValue)
+        
+        let actualQuery = "q=hello&key=\(Configuration.key)"
+        XCTAssertEqual(url.query, actualQuery)
+    }
+    
+    func testGetURLWithParameterAndLimit() {
+        
+        guard let url = URLManager.getURL(for: .search, appending: ["q": "hello"], withLimit: true) else {
+            XCTFail("Unable to get URL")
+            return
+        }
+        
+        let actualURL = URL(string: Configuration.url)
+        
         XCTAssertEqual(url.host, actualURL?.host)
         XCTAssertEqual(url.scheme, actualURL?.scheme)
         XCTAssertEqual(url.path, EndPoint.search.rawValue)
