@@ -32,7 +32,7 @@ struct MediaCollection: Decodable {
 
     let nanoGIF: Media?
 
-    enum Keys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case nanoMP4 = "nanomp4"
         case nanoWebM = "nanowebm"
         case tinyGIF = "tinygif"

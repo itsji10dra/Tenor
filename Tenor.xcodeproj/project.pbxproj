@@ -23,7 +23,6 @@
 		103A38B9213460EB00343B4C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 103A38B7213460EB00343B4C /* Main.storyboard */; };
 		103A38BB213460ED00343B4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 103A38BA213460ED00343B4C /* Assets.xcassets */; };
 		103A38BE213460ED00343B4C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 103A38BC213460ED00343B4C /* LaunchScreen.storyboard */; };
-		103A38C9213460ED00343B4C /* TenorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103A38C8213460ED00343B4C /* TenorTests.swift */; };
 		103A38D42134643300343B4C /* PreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103A38D32134643300343B4C /* PreviewCell.swift */; };
 		103A38D8213466C200343B4C /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103A38D7213466C200343B4C /* Response.swift */; };
 		103A38DB213467E500343B4C /* GIF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103A38DA213467E500343B4C /* GIF.swift */; };
@@ -72,7 +71,6 @@
 		103A38BD213460ED00343B4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		103A38BF213460ED00343B4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		103A38C4213460ED00343B4C /* TenorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TenorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		103A38C8213460ED00343B4C /* TenorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TenorTests.swift; sourceTree = "<group>"; };
 		103A38CA213460ED00343B4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		103A38D32134643300343B4C /* PreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewCell.swift; sourceTree = "<group>"; };
 		103A38D7213466C200343B4C /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
@@ -227,7 +225,6 @@
 		103A38C7213460ED00343B4C /* TenorTests */ = {
 			isa = PBXGroup;
 			children = (
-				103A38C8213460ED00343B4C /* TenorTests.swift */,
 				10015D042135E0F800160F63 /* Network */,
 				10015D032135E0BB00160F63 /* Models */,
 				103A38CA213460ED00343B4C /* Info.plist */,
@@ -516,7 +513,6 @@
 			files = (
 				10015CFA2135DE7300160F63 /* ResponseTests.swift in Sources */,
 				103A38F92135B92100343B4C /* MediaTests.swift in Sources */,
-				103A38C9213460ED00343B4C /* TenorTests.swift in Sources */,
 				10015CF72135DB4F00160F63 /* GIFTests.swift in Sources */,
 				10015CF02135D7F200160F63 /* MediaCollectionTests.swift in Sources */,
 				10015D062135E10900160F63 /* URLManagerTests.swift in Sources */,
