@@ -33,7 +33,10 @@ class URLManagerTests: XCTestCase {
         XCTAssertEqual(url.scheme, actualURL?.scheme)
         XCTAssertEqual(url.path, EndPoint.search.rawValue)
         
-        let actualQuery = "key=\(Configuration.key)"
+        var actualQuery = "key=\(Configuration.key)"
+        if let anonId = UserDefaults.standard.string(forKey: kAnonymousIdKey) {
+            actualQuery = actualQuery + "&anon_id=\(anonId)"
+        }
         XCTAssertEqual(url.query, actualQuery)
     }
     
@@ -50,7 +53,10 @@ class URLManagerTests: XCTestCase {
         XCTAssertEqual(url.scheme, actualURL?.scheme)
         XCTAssertEqual(url.path, EndPoint.search.rawValue)
         
-        let actualQuery = "q=hello&key=\(Configuration.key)"
+        var actualQuery = "q=hello&key=\(Configuration.key)"
+        if let anonId = UserDefaults.standard.string(forKey: kAnonymousIdKey) {
+            actualQuery = actualQuery + "&anon_id=\(anonId)"
+        }
         XCTAssertEqual(url.query, actualQuery)
     }
     
@@ -67,7 +73,10 @@ class URLManagerTests: XCTestCase {
         XCTAssertEqual(url.scheme, actualURL?.scheme)
         XCTAssertEqual(url.path, EndPoint.search.rawValue)
         
-        let actualQuery = "q=hello&key=\(Configuration.key)&limit=\(Configuration.pageLimit)"
+        var actualQuery = "q=hello&key=\(Configuration.key)&limit=\(Configuration.pageLimit)"
+        if let anonId = UserDefaults.standard.string(forKey: kAnonymousIdKey) {
+            actualQuery = actualQuery + "&anon_id=\(anonId)"
+        }
         XCTAssertEqual(url.query, actualQuery)
     }
 }
