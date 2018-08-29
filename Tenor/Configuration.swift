@@ -16,7 +16,7 @@ struct Configuration {
     
     static let pageLimit    = 8
 
-    static var anonymoudId: String? = nil
+    static var anonymousId: String? = nil
     
     static func checkConfiguration() {
         

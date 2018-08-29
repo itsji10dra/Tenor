@@ -33,7 +33,7 @@ class AnonIdViewModel {
                     return completion(false)
                 }
                 
-                Configuration.anonymoudId = anonId
+                Configuration.anonymousId = anonId
                 
                 completion(true)
                 

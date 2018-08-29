@@ -56,7 +56,7 @@ struct URLManager {
     }
     
     static private func getAnonymousIdParameters() -> Parameters? {
-        guard let anonymoudId = Configuration.anonymoudId else { return nil }
+        guard let anonymoudId = Configuration.anonymousId else { return nil }
         return ["anon_id"   : anonymoudId]
     }
 
