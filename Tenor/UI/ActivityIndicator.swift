@@ -33,10 +33,10 @@ class ActivityIndicator {
             let keyWindow = window else { return }
         
         DispatchQueue.main.async {
-            
+
             let view = UIView()
             view.backgroundColor = UIColor.clear
-            view.frame = UIScreen.main.bounds
+            view.frame = window?.rootViewController?.view.bounds ?? UIScreen.main.bounds
             view.restorationIdentifier = restorationIdentifier
             
             defer { keyWindow.addSubview(view) }

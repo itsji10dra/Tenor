@@ -50,6 +50,12 @@ class SearchVC: UIViewController {
         NotificationCenter.default.removeObserver(self)
     }
     
+    // MARK: - ViewController Methods
+
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        resultCollectionView.collectionViewLayout.invalidateLayout()
+    }
+    
     // MARK: - Methods
 
     private func fetchAnonymousId() {
