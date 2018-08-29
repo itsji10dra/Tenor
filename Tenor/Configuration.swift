@@ -14,9 +14,7 @@ struct Configuration {
     
     static let key          = "5OG0LXMV7LV2"
     
-    static let pageLimit    = 8
-
-    static var anonymousId: String? = nil
+    static let pageLimit    = 20
     
     static func checkConfiguration() {
         

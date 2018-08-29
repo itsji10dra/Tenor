@@ -15,7 +15,7 @@ class SearchViewModel {
     
     typealias SearchResult = ((_ data: [GIF]?, _ error: Error?) -> Void)
 
-    // MARK: - IBOutlets
+    // MARK: - Data
 
     private var dataRequest: DataRequest?
     

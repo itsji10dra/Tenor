@@ -11,13 +11,15 @@ import Alamofire
 
 class AnonIdViewModel {
     
-    // MARK: - IBOutlets
+    // MARK: - Data
     
     private var dataRequest: DataRequest?
     
     // MARK: - Public Methods
     
     public func getAnonymousId(_ completion: @escaping ((Bool) -> Void)) {
+        
+        guard UserDefaults.standard.string(forKey: kAnonymousIdKey) == nil else { return completion(true) }
         
         guard let url = URLManager.getURL(for: .anonymousId) else { return }
         
@@ -33,8 +35,8 @@ class AnonIdViewModel {
                     return completion(false)
                 }
                 
-                Configuration.anonymousId = anonId
-                
+                UserDefaults.standard.set(anonId, forKey: kAnonymousIdKey)
+
                 completion(true)
                 
             case .failure( _):
