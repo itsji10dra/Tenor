@@ -16,7 +16,7 @@ struct Response<T>: Decodable where T: Decodable {
     
     let next: String?
     
-    enum CodingKeys: String, CodingKey {
+    enum Keys: String, CodingKey {
         case webURL = "weburl"
         case results
         case next

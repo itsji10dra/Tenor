@@ -28,7 +28,7 @@ struct GIF: Decodable {
     
     let id: String?
 
-    enum CodingKeys: String, CodingKey {
+    enum Keys: String, CodingKey {
         case tags, url, media, created, shares
         case itemURL = "itemurl"
         case hasAudio = "hasaudio"

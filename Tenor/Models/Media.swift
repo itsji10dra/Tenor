@@ -20,7 +20,7 @@ struct Media: Decodable {
     
     let size: Int64?
     
-    enum CodingKeys: String, CodingKey {
+    enum Keys: String, CodingKey {
         case url
         case dimension = "dims"
         case duration
